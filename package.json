@@ -1,0 +1,10 @@
+{
+  "name": "Temperature-Converter",
+  "version": "1.0.0",
+  "description": "Simple Temperature Converter",
+  "main": "server.js",
+  "author": "Devon A Rimmington",
+  "dependencies":{
+    "express"        : "^4.13.4"
+  }
+}

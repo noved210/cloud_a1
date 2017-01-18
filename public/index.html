@@ -1,0 +1,27 @@
+<html>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="temp_conv.js"></script>
+    <title>Temperature Converter</title>
+  </head>
+
+  <body>
+
+    <div ng-app="a1" ng-controller="converter">
+      <form name="form">
+        <input name="temp" type="number" step="any" ng-model="temp" required></input>
+        <select ng-model="unit" required>
+          <option value="F">F</option>
+          <<option value="C">C</option>
+        </select>
+        <button ng-show="form.$valid" ng-click="convertTemp()">Convert</button>
+      </form>
+
+      <p ng-bind="temp_output"></p>
+
+    </div>
+
+  </body>
+
+</html>
