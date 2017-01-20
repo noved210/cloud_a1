@@ -10,15 +10,15 @@
 
     <div ng-app="a1" ng-controller="converter">
       <form name="form">
-        <input name="temp" type="number" step="any" ng-model="temp" required></input>
-        <select ng-model="unit" required>
+        Original Temperature Value <input name="temp" type="number" step="any" ng-model="temp" required></input>
+        New Temperature Unit <select name="unit" ng-model="unit" required>
           <option value="F">F</option>
           <<option value="C">C</option>
         </select>
-        <button ng-show="form.$valid" ng-click="convertTemp()">Convert</button>
+        <button ng-show="form.$valid" ng-click="convertTemp(form.$valid, form.temp.$valid, form.unit.$valid)">Convert</button>
       </form>
 
-      <p ng-bind="temp_output"></p>
+      <p ng-bind="temp_output">Result {{temp_output}}</p>
 
     </div>
 

@@ -8,12 +8,17 @@ app.get("/:unit/:value", function(req, res){
   var unit = req.params.unit;
   var value = req.params.value;
 
-  if(unit == "F"){
-    unit = "C";
-    value = (value - 32) * (5/9)
+  if(value != undefined){
+    if(unit == "F"){
+      unit = "C";
+      value = (value - 32) * (5/9)
+    }else{
+      unit = "F";
+      value = value*9/5 + 32
+    }
   }else{
-    unit = "F";
-    value = value*9/5 + 32
+    unit = "blank";
+    value = "please enter in a number value";
   }
 
   res.json({unit: unit, value: value});
